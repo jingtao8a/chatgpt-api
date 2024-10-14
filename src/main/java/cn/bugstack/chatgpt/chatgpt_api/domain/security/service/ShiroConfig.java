@@ -5,10 +5,10 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration
 public class ShiroConfig {
-    @Bean
-    public SubjectFactory subjectFactory() {
-        class JwtDefaultSubjectFacotry extends DefaultWebSubjectFactory {
-
-        }
-    }
+//    @Bean
+//    public SubjectFactory subjectFactory() {
+//        class JwtDefaultSubjectFacotry extends DefaultWebSubjectFactory {
+//
+//        }
+//    }
 }
