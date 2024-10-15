@@ -1,8 +1,7 @@
 package cn.bugstack.chatgpt.chatgpt_api.interfaces;
 
-import cn.hutool.jwt.JWTUtil;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import cn.bugstack.chatgpt.chatgpt_api.domain.security.service.JwtUtil;
+import org.slf4j.*;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -25,11 +24,10 @@ public class ApiAccessController {
             return ResponseEntity.ok(map);
         }
         //校验通过生成token
-        JWTUtil jwtUtil = new JWTUtil();
+        JwtUtil jwtUtil = new JwtUtil();
         Map<String, Object> chaim = new HashMap<>();
         chaim.put("username", username);
-        String jwtToken = jwtUtil.createToken(chaim, password.getBytes());
-
+        String jwtToken = jwtUtil.encode(username, 5 * 60 * 1000, chaim);//token生存时间为5 min
         map.put("msg", "授权成功");
         map.put("token", jwtToken);
         //返回token码
