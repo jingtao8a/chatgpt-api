@@ -6,3 +6,6 @@
 
 ![img](./images/Nginx权限验证.png)
 
+
+## 微信公众号验签和对接OpenAI
+![img](./images/微信公众号验签和对接OpenAI.png)
