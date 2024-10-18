@@ -1,0 +1,35 @@
+#开发环境
+server:
+  port: 8080
+  tomcat:
+    max-connections: 20
+    threads:
+      max: 20
+      min-spare: 10
+    accept-count: 10
+
+#数据库
+#spring:
+#  datasource:
+#    username: root
+#    password: 2001yuxintao
+#    url: jdbc:mysql://127.0.0.1:3306/s-pay-mall?useUnicode=true&characterEncoding=utf8&autoReconnect=true
+#    driver-class-name: com.mysql.cj.jdbc.Driver
+#    initialSize: 5
+#    minIdle: 5
+#    maxActive: 20
+#    maxWait: 60000
+#    timeBetweenEvictionRunsMillis: 60000
+#    validationQuery: SELECT 1
+#    testWhileIdle: true
+#    testOnBorrow: false
+#    testOnReturn: false
+#    poolPreparedStatements: true
+#    maxPoolPreparedStatementPerConnectionSize: 20
+#    filters: stat
+#日志
+logging:
+  level:
+    root: info
+  config: classpath:logback-spring.xml
+  path: D:/chatgpt-api/log
